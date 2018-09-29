@@ -6,7 +6,7 @@ from collections import deque
 class Server:
     def __init__(self, sender_data, receiver_data):
         self.sender_data = sender_data
-        self.receiveer_data = receiver_data
+        self.receiver_data = receiver_data
 
     def start(self):
         while True:
@@ -17,7 +17,7 @@ class Server:
                 elif(curr_data.dtype==1 and err<0.05): continue
                 delay = random.uniform(0, 1)*0.005
                 time.sleep(delay)
-                receiver_data.append(curr_data)
-            time.sleep(1)
-            print ("server_here")
+                # print("Server sent data: " + str(curr_data.data))
+                self.receiver_data.append(curr_data)
+            # time.sleep(1)
 
